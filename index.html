@@ -4,16 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
-
+    <title> Phonie challenge</title>
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"   rel="stylesheet">
+  
     <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="country.css">
 </head>
 <body>
-    
-    <h2>make some magic here!!</h2>
+ 
+  <section id="container">
+       <h2>Validate your network carrier</h2>
+  <form id="flex-container">
+  
+    <div class="position">
+         <label for ="Phone_number">Phone Number:</label>
+    <input id="phone" name="phone" type ="tel" name = " phone"  placeholder=" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enter phone number" maxlength="11" pattern="" required><i class="fa-solid fa-circle-check"></i>
+      
+      <span>
+        <img src="" id="network-logo" id="logos" width="30px">
+      </span>
+    </div>  
+    <p id="para"></p>
+    <div id="btn" class="btn">
+    <button id="submit-btn" class="submit-btn">confirm carrier</button>
+    </div>  
+  </form>
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+    
+  </section>
+
+    <!-- // ============= END DO NOT EDIT ============== // -->
     <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="country.js" ></script>
+  <script src=""
+  	<script>
+			// // Vanilla Javascript
+			var input = document.querySelector("#phone");
+			window.intlTelInput(input, {
+				// options here
+			});
+
+			$(document).ready(function () {
+				$(".iti__flag-container").click(function () {
+					var countryCode = $(".iti__selected-flag").attr("title");
+					var countryCode = countryCode.replace(/[^0-9]/g, "");
+					$("#phone").val("");
+					$("#phone").val("+" + countryCode + " " + $("#phone").val());
+				});
+			});// 
+		</script> 
+    <!-- // ============= END DO NOT EDIT ============== // -->
 </body>
 </html>
+
+
